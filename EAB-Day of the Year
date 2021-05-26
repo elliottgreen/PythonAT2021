@@ -1,0 +1,39 @@
+month_D=[29,31,28,31,30,31,30,31,31,30,31,30,31]
+
+def is_year_leap(year):
+ if (year % 4) == 0:
+   if (year % 100) == 0:
+       if (year % 400) == 0:
+           return True
+       else:
+           return False
+   else:
+       return True
+ else:
+   return False
+
+def days_in_month(year, month):
+ if month> 12 or year < 0:
+    return
+ else:
+ # month_D=[29,31,28,31,30,31,30,31,31,30,31,30,31]
+
+  if is_year_leap(year)== False:
+    return month_D[month]
+  elif month==2:
+     return month_D[0]
+  else:
+     return month_D[month]
+     
+def day_of_year(year, month, day):
+ if year<0 or month>12 or day != month_D[month]:
+     return
+ else:
+  if is_year_leap(year)== False:
+    N = int((275 * month) / 9.0) - 2 * int((month + 9) / 12.0) + day - 30
+    return N
+  else:
+    N = int((275 * month) / 9.0) - 1 * int((month + 9) / 12.0) + day - 30
+    return N
+
+print(day_of_year(2001, 2, 30))
