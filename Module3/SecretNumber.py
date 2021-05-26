@@ -13,13 +13,11 @@ print(
 
 number = 9999
 # 0 terminates execution.
-while number != 0:
-    number = int(input("Guess my number or type 0 to give up: "))
+while number != 777:
+    number = int(input("Guess my number: "))
     if number == secret_number:
        #number = secret_number
-       print ("Well done, muggle! You are free now.")
-       break
+        print ("Well done, muggle! You are free now.")
     else:
         print ("Ha ha! You're stuck in my loop!")
 
-# number = int(input("Guess my number or type 0 to give up: "))
